@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng nhập</title>
+    <style>
+        /* Tùy chỉnh nền */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #89cff0, #ffcccb); /* Nền gradient */
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Hộp đăng nhập */
+        .login-container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 300px;
+        }
+
+        /* Tiêu đề */
+        .login-container h1 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        /* Các ô nhập liệu */
+        .login-container input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        /* Nút đăng nhập */
+        .login-container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #136fe7; /* Màu xanh Facebook */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        /* Hiệu ứng hover */
+        .login-container button:hover {
+            background-color: #0e5bb5;
+        }
+
+        /* Thông báo lỗi */
+        .error-message {
+            color: red;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h1>Đăng nhập</h1>
+        <form id="login-form">
+            <input type="text" id="username" placeholder="Tài khoản" required>
+            <input type="password" id="password" placeholder="Mật khẩu" required>
+            <button type="submit">Đăng nhập</button>
+            <p class="error-message" id="error-message"></p>
+        </form>
+    </div>
+
+    <script>
+        // Xử lý đăng nhập
+        const form = document.getElementById("login-form");
+        const errorMessage = document.getElementById("error-message");
+
+        form.addEventListener("submit", function (e) {
+            e.preventDefault(); // Ngăn trang reload
+
+            // Lấy giá trị nhập vào
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+
+            // Kiểm tra thông tin (dùng giá trị mẫu)
+            if (username === "1" && password === "1") {
+                // Nếu đúng, chuyển hướng đến trang khác
+                window.location.href = "wed.html"; // Đổi URL theo ý bạn
+            } else {
+                // Nếu sai, hiển thị thông báo lỗi
+                errorMessage.textContent = "Sai tài khoản hoặc mật khẩu!";
+            }
+        });
+    </script>
+</body>
+</html>
